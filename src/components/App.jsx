@@ -16,6 +16,15 @@ export class App extends Component {
       };
     });
   };
+
+  componentDidMount() {
+    const contacts = JSON.parse(localStorage.getItem("saved_contacts"));
+    this.setState(({ contacts }));
+  };
+
+  componentDidUpdate() {
+    localStorage.setItem("saved_contacts", JSON.stringify(this.state.contacts));
+  };
  
   deleteItem = num => {
     return this.setState(prevState => ({ contacts: prevState.contacts.filter(({ id }) => id !== num) }));

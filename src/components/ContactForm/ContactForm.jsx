@@ -3,7 +3,6 @@ import { nanoid } from "nanoid";
 import PropTypes from 'prop-types';
 import * as Yup from 'yup';
 import { Form, Formik, Field, ErrorMessage, Label, Button } from './ContactForm.styled';
-
  
 export class ContactForm extends Component{
 

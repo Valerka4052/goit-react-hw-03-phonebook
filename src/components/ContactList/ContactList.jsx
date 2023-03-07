@@ -18,7 +18,6 @@ export class ContactList extends Component {
 
     render() {
         const { filteredContacts, deleteItem } = this.props;
-         console.log(filteredContacts)
         return (
             <List>
                 {filteredContacts.map(({ name, number, id }) => {

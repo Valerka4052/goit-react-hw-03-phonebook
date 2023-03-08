@@ -23,8 +23,11 @@ export class App extends Component {
     this.setState(({ contacts }));}
   };
 
-  componentDidUpdate() {
-    localStorage.setItem("saved_contacts", JSON.stringify(this.state.contacts));
+  componentDidUpdate(_, prevState) {
+    const { contacts } = this.state;
+    if (contacts !== prevState.contacts){
+      localStorage.setItem("saved_contacts", JSON.stringify(contacts));
+    };
   };
  
   deleteItem = num => {
